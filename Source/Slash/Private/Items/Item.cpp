@@ -2,6 +2,12 @@
 
 
 #include "Items/Item.h"
+#include "DrawDebugHelpers.h"
+#include "Slash/Slash.h"
+
+
+#define THIRTY 30
+
 
 // Sets default values
 AItem::AItem()
@@ -21,6 +27,13 @@ void AItem::BeginPlay()
 	{
 		GEngine->AddOnScreenDebugMessage(1, 60.0f, FColor::Cyan, FString("Item OnScreen Message!"));
 	}
+	
+	UWorld* World = GetWorld();
+
+	FVector Location = GetActorLocation();
+	DRAW_SPHERE(Location)
+	
+
 }
 
 // Called every frame
@@ -32,8 +45,12 @@ void AItem::Tick(float DeltaTime)
 	
 	if (GEngine)
 	{
-		FString Message = FString::Printf(TEXT("DeltaTime: %f"), DeltaTime);
+		FString Name = GetName();
+		FString Message = FString::Printf(TEXT("Item Name: %s"), *Name);
 		GEngine->AddOnScreenDebugMessage(1, 60.0f, FColor::Cyan, Message);
+		
+		UE_LOG(LogTemp, Warning, TEXT("Item Name: %s"), *Name);
+
 	}
 }
 
