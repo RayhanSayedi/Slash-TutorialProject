@@ -15,7 +15,12 @@ AItem::AItem()
 void AItem::BeginPlay()
 {
 	Super::BeginPlay();
-	
+	UE_LOG(LogTemp, Warning, TEXT("Begin Play log"));
+
+	if (GEngine)
+	{
+		GEngine->AddOnScreenDebugMessage(1, 60.0f, FColor::Cyan, FString("Item OnScreen Message!"));
+	}
 }
 
 // Called every frame
@@ -23,5 +28,12 @@ void AItem::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	UE_LOG(LogTemp, Warning, TEXT("DeltaTime: %f"), DeltaTime);
+	
+	if (GEngine)
+	{
+		FString Message = FString::Printf(TEXT("DeltaTime: %f"), DeltaTime);
+		GEngine->AddOnScreenDebugMessage(1, 60.0f, FColor::Cyan, Message);
+	}
 }
 
