@@ -2,11 +2,8 @@
 
 
 #include "Items/Item.h"
-#include "DrawDebugHelpers.h"
-#include "Slash/Slash.h"
+#include "Slash/DebugMacros.h"
 
-
-#define THIRTY 30
 
 
 // Sets default values
