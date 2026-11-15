@@ -3,9 +3,11 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Components/CapsuleComponent.h"
 #include "GameFramework/Pawn.h"
 #include "Bird.generated.h"
+
+class UCapsuleComponent;
+
 
 UCLASS()
 class SLASH_API ABird : public APawn
