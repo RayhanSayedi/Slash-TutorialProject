@@ -14,6 +14,7 @@ class SLASH_API ABird : public APawn
 {
 	GENERATED_BODY()
 
+	
 public:
 	ABird();
 	virtual void Tick(float DeltaTime) override;
