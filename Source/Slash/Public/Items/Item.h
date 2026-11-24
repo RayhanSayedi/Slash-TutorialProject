@@ -25,9 +25,11 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Sine Parameters")
     float TimeConstant = 5.f;
 	
+	// Creates a wave pattern w/ sin and time
 	UFUNCTION(BlueprintPure)
 	float TransformedSin();
 	
+	// Creates a wave pattern w/ sin and time
 	UFUNCTION(BlueprintPure)
 	float TransformedCos();
 	
